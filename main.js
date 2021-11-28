@@ -2,6 +2,7 @@ const path = require('path');
 const {app, ipcMain} = require('electron');
 const Window = require('./Window');
 const DataStore = require('./Datastore');
+const FileSystem = require('./FileSystem');
 
 // ホットリロード有効化
 require('electron-reload')(__dirname);
@@ -14,6 +15,16 @@ app.on('ready', () => {
     });
 
     let addTodoWin;
+
+    const jsonFileSys = new FileSystem();
+    var jsondata = jsonFileSys.readJson();
+    console.log(jsondata);
+    jsondata.passwords.forEach((obj) => {
+        // console.log(obj.service);
+        console.log(obj["service"]);
+        // console.log(Object.keys(obj));
+    });
+
 
     ipcMain.on('add-todo-windows', () => {
         if(!addTodoWin){
