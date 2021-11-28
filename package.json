@@ -1,0 +1,21 @@
+{
+  "name": "PasswordManager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-windows": "electron-packager . PasswordManager --platform=win32 --arch=x64 --overwrite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^16.0.2",
+    "electron-packager": "^15.4.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-store": "^8.0.1",
+    "spectre.css": "^0.5.9"
+  }
+}
